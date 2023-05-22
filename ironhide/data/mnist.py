@@ -1,8 +1,6 @@
-import tensorflow as tf
 import tensorflow_datasets as tfds
 from ironhide.utilities.helpers import one_hot
 import jax.numpy as jnp
-import time
 
 
 data_dir = '/tmp/tfds'
