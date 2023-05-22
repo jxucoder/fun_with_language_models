@@ -1,0 +1,11 @@
+jax
+jupyter
+jaxlib
+torch
+torchvision
+tensorflow
+tensorflow_datasets
+wget
+nltk
+jaxopt
+optax
