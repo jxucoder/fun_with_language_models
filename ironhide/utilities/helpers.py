@@ -1,4 +1,3 @@
-from jax import random
 import jax.numpy as jnp
 import numpy as np
 
@@ -21,3 +20,10 @@ def batchify(train_x, train_y, batch_size=256):
     batched_train_y = np.array_split(train_y[:num_batches * batch_size], num_batches)
 
     return zip(batched_train_x, batched_train_y)
+
+
+def get_batch_with_seq_length(data, seq_length):
+    for i in range(0, len(data[0]) - seq_length, seq_length):
+        inputs = data[:, i: i + seq_length]
+        targets = data[:, (i + 1): (i + 1) + seq_length]
+        yield (inputs, targets)
